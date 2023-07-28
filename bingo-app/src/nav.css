@@ -1,0 +1,217 @@
+button {
+  font-family: "Open Sans";
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  top: 250px;
+  left: 93px;
+  font-size: 18px;
+  border: none;
+  width: 158px;
+  border-radius: 3px;
+  padding: 10px;
+  background-color: #13BAFF;
+  box-sizing: border-box;
+}
+.scene {
+  font-family: "Open Sans";
+}
+#lottery {
+  position: relative;
+}
+#ball-place {
+  position: absolute;
+  top: 140px;
+  left: 40%;
+}
+
+.lottery-machine {
+  position: absolute;
+  border-radius: 50%;
+  left: 93px;
+  width: 200px;
+  height: 215px;  
+}
+.lottery-machine-canvas {
+  position: absolute;
+  left: 8px;
+  top: 23px;
+  width: 140px;
+  height: 140px;
+  padding: 7px;
+  border-radius: inherit;
+  box-sizing: border-box;
+  transition: opacity 0.7s;
+}
+.lottery-machine::after {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 23px;
+  width: 140px;
+  height: 140px;
+  background-color: rgba(85, 177, 201, .3);
+  border: 7px solid #00bcff;
+  border-radius: inherit;
+  box-sizing: border-box;
+  transition: opacity 0.7s;
+}
+.lottery-machine.disabled .lottery-machine-canvas {
+  opacity: 0;
+  pointer-events: none;
+}
+.lottery-machine.disabled::after {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* 
+.lottery-machine .lottery-base {
+  position: absolute;
+  background-image: url('https://svgur.com/i/DH4.svg');
+  width: 165px;
+  height: 75px;
+  left: 0;
+  top: 141px;
+  z-index: 2;
+} */
+
+.lottery-machine .lottery-lever {
+  position: absolute;
+  background-image: url('https://svgur.com/i/DGD.svg');
+  width: 52px;
+  height: 23px;
+  left: 149px;
+  top: 176px;
+  transition: transform 0.5s;
+  transform-origin: left center;
+}
+
+.lottery-machine .lottery-lever.hover {
+  transform: rotate(-10deg);
+}
+.lottery-machine .lottery-lever.down {
+  transform: rotate(15deg);
+}
+
+/* .lottery-machine .lottery-tube {
+  position: absolute;
+  background-image: url('https://svgur.com/i/DHH.svg');
+  width: 110px;
+  height: 182px;
+  left: 61px;
+  top: 3px;
+  z-index: 1;
+} */
+
+.lottery-machine .lottery-right-door, .lottery-machine .lottery-left-door {
+  position: absolute;
+  background-image: url('https://svgur.com/i/DJ5.svg');
+  width: 32px;
+  height: 29px;
+  left: 77px;
+  top: 173px;
+  z-index: 4;
+  transition: left 0.75s;
+}
+.lottery-machine .lottery-right-door.animation, .lottery-machine .lottery-left-door.animation {
+  left: 101px;
+}
+.lottery-machine .lottery-left-door {
+  background-image: url('https://svgur.com/i/DHF.svg');
+  left: 46px;
+}
+.lottery-machine .lottery-left-door.animation {
+  left: 20px;
+}
+.lottery-machine .lottery-lift {
+  position: absolute;
+  background-color: #abe9f4;
+  width: 14px;
+  height: 0;
+  left: 71px;
+  top: 196px;
+  box-sizing: border-box;
+  border: 1px solid #ddeff3;
+  border-radius: 2px;
+  transition: top 1s, height 1s;
+}
+.lottery-machine .lottery-lift.animation {
+  top: 23px;
+  height: 173px;
+}
+.lottery-machine .lottery-ball {
+  width: 18px;
+  height: 18px;
+  line-height: 1.375;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  border-radius: 50%;
+  position: absolute;
+  left: 69px;
+  top: 178px;
+  transition: top 1s, transform 0.75s ease-in;
+}
+.lottery-machine .lottery-ball.invisible {
+  opacity: 0;
+}
+.lottery-machine .lottery-ball.animation-up {
+  top: 5px;
+}
+.lottery-machine .lottery-ball.animation-roll {
+  transform-origin: 9px 88px;
+  transform: rotate(180deg);
+}
+.lottery-machine .lottery-ball.blink:after {
+  content: '';
+  background-color: #fff;
+  position: absolute;
+  left: 10px;
+  top: 4px;
+  width: 4px;
+  height: 4px;
+  transform-origin: 0 0;
+  transform: rotate(0);
+}
+.lottery-machine .lottery-ball.no-transition {
+  transition: none;
+}
+.lottery-machine .lottery-hover-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 214px;
+  width: 100%;
+  z-index: 5;
+}
+.lottery-ball.clone {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  font-size: 12px;
+  line-height: 1.375;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lottery-ball.clone.invisible {
+  opacity: 0;
+}
+.lottery-ball.clone.no-transition {
+  transition: none;
+}
+.lottery-bal{
+    background-color: rgb(21, 22, 22);
+    width: 16px;
+    border-radius: 22px;
+    height: 16px;
+    padding: 4px;
+    border: 1px solid;
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    z-index: 99;
+    }

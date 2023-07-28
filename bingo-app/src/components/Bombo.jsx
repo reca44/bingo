@@ -106,7 +106,7 @@ return (
     <div>
     <nav>
         <div className="headbt">
-            <h1>BINGO</h1>
+            
             <button onClick={reiniciarJuego}>Reiniciar Juego</button>
             <button
                 onClick={generarNumeroAleatorio}
