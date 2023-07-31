@@ -26,6 +26,7 @@ const generarNumerosDisponibles = () => {
     const fallbackVoice = voices.find((voice) => voice.name === "Microsoft Pablo - Spanish (Spain)");
     const spanish = voices.find((voice) => voice.name === "Spanish (Spain)");
     const speak = (text) => {
+        //validacion al hablar comentada
         // if (synth.speaking) {
             //     console.error("speechSynthesis.speaking");
             //     return;

@@ -5,7 +5,6 @@ import PropTypes from "prop-types";
 const Circulo = ({ displayNumber }) => {
     return (
         <div className="circulo">
-            
             {displayNumber ? displayNumber : "FIN"}
         </div>
     );

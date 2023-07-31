@@ -20,7 +20,6 @@ const handleShake = () => {
     if (!isAnimating) {
     setIsAnimating(true);
 
- 
     const timeline = gsap.timeline({
         onComplete: () => {
         setIsAnimating(false);
@@ -28,7 +27,7 @@ const handleShake = () => {
         repeat: -1, // -1 infinito
         onRepeat: () => {
         setBallPositions((prevPositions) =>
-            prevPositions.map((position) => ({
+            prevPositions.map(() => ({
             x: 65,
             y: 110,
             }))
