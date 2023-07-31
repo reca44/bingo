@@ -1,3 +1,4 @@
+import Circulo from "./Circulo";
 import React, { useState } from "react";
 
 const Bombo = () => {
@@ -13,6 +14,7 @@ const generarNumerosDisponibles = () => {
     const [numerosDisponibles, setNumerosDisponibles] = useState(generarNumerosDisponibles());
     const [displayNumber, setDisplayNumber] = useState("");
     const [isAnimating, setIsAnimating] = useState(false);
+    const [hasStarted, setHasStarted] = useState(false);
 
     const reiniciarJuego = () => {
         setNumerosGenerados([]);
@@ -32,10 +34,12 @@ const generarNumerosDisponibles = () => {
             
     const utterThis = new SpeechSynthesisUtterance(text);
 
+    // eslint-disable-next-line no-unused-vars
     utterThis.onend = function (event) {
     console.log("SpeechSynthesisUtterance.onend");
     };
 
+    // eslint-disable-next-line no-unused-vars
     utterThis.onerror = function (event) {
     console.error("SpeechSynthesisUtterance.onerror");
     };
@@ -52,13 +56,6 @@ const generarNumerosDisponibles = () => {
         synth.speak(utterThis);
 };
 
-const Circulo = ({ displayNumber }) => {
-    return (
-        <div className="circulo">
-            {displayNumber ? displayNumber : "FIN"}
-        </div>
-    );
-};
 
 
     const generarNumeroAleatorio = () => {
@@ -101,6 +98,7 @@ const Circulo = ({ displayNumber }) => {
             });
         }
         }, 50);
+        setHasStarted(true);
     };
 
 return (
@@ -119,7 +117,7 @@ return (
     </nav>
 
     <div className="ball b2">
-        <Circulo displayNumber={displayNumber} />
+        {hasStarted && <Circulo displayNumber={displayNumber} />}
     </div>
 
     {numerosGenerados.length > 0 && (

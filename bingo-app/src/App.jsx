@@ -1,14 +1,15 @@
-import './App.css'
-import Bombo from './components/Bombo'
-import Nav from './components/Nav'
+import "./App.css";
+import React from "react";
+import Bombo from "./components/Bombo";
+import Nav from "./components/Nav";
 
 function App() {
   return (
     <>
-    <Nav/>
-    <Bombo/>
+      <Nav />
+      <Bombo />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
