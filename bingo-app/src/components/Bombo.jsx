@@ -20,16 +20,16 @@ const generarNumerosDisponibles = () => {
         setIsAnimating(false);
         setDisplayNumber("");
     };
-
-    const speak = (text) => {
-        if (synth.speaking) {
-            console.error("speechSynthesis.speaking");
-            return;
-        }
-
     const googleSpanishVoice = voices.find((voice) => voice.name === "Google español");
     const fallbackVoice = voices.find((voice) => voice.name === "Microsoft Pablo - Spanish (Spain)");
     const spanish = voices.find((voice) => voice.name === "Spanish (Spain)");
+    const speak = (text) => {
+        // if (synth.speaking) {
+            //     console.error("speechSynthesis.speaking");
+            //     return;
+            // }
+            
+            
     const utterThis = new SpeechSynthesisUtterance(text);
 
     utterThis.onend = function (event) {
@@ -52,16 +52,17 @@ const generarNumerosDisponibles = () => {
         synth.speak(utterThis);
 };
 
-    const Circulo = ({ displayNumber }) => {
-        return (
-                <div className="circulo">
-                    {displayNumber}
-                </div>
-            );
-    };
+const Circulo = ({ displayNumber }) => {
+    return (
+        <div className="circulo">
+            {displayNumber ? displayNumber : "FIN"}
+        </div>
+    );
+};
+
 
     const generarNumeroAleatorio = () => {
-        if (numerosGenerados.length === 90) {
+        if (numerosGenerados.length > 90) {
             return;
         }
         if (isAnimating) {
@@ -106,7 +107,7 @@ return (
     <div>
     <nav>
         <div className="headbt">
-            <h1>BINGO</h1>
+            
             <button onClick={reiniciarJuego}>Reiniciar Juego</button>
             <button
                 onClick={generarNumeroAleatorio}
